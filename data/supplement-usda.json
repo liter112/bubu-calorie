@@ -1,0 +1,119 @@
+[
+  {
+    "id": "usda_blueberry", "name": "蓝莓", "cat": "fruit", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 57, "protein": 0.74, "fat": 0.33, "carb": 14.5, "fiber": 2.4,
+      "sugar": 9.96, "vc": 9.7, "va": 3, "ve": 0.57, "potassium": 77, "calcium": 6,
+      "iron": 0.28, "magnesium": 6, "phosphorus": 12, "zinc": 0.16, "selenium": 0.1,
+      "b1": 0.037, "b2": 0.041, "b6": 0.052, "folate": 6, "niacin": 0.418},
+    "special": [{"n": "花青素", "a": "约 163 mg/100 g", "d": "浆果里含量最高的之一，抗氧化、护眼"}]
+  },
+  {
+    "id": "usda_avocado", "name": "牛油果", "cat": "fruit", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 160, "protein": 2.0, "fat": 14.7, "carb": 8.5, "fiber": 6.7,
+      "sugar": 0.66, "vc": 10, "ve": 2.07, "potassium": 485, "calcium": 12, "iron": 0.55,
+      "magnesium": 29, "phosphorus": 52, "zinc": 0.64, "b1": 0.067, "b2": 0.13,
+      "b6": 0.257, "folate": 81, "niacin": 1.74},
+    "special": [{"n": "单不饱和脂肪酸", "a": "约 10 g/100 g", "d": "替代饱和脂肪，对血脂友好，但热量高需控量"}]
+  },
+  {
+    "id": "usda_quinoa", "name": "藜麦（生）", "cat": "grain", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 368, "protein": 14.1, "fat": 6.1, "carb": 64.2, "fiber": 7.0,
+      "vc": 0, "ve": 2.44, "potassium": 563, "calcium": 47, "iron": 4.6, "magnesium": 197,
+      "phosphorus": 457, "zinc": 3.1, "b1": 0.36, "b2": 0.32, "b6": 0.487, "folate": 184,
+      "niacin": 1.52},
+    "special": [{"n": "完全蛋白", "a": "含全部必需氨基酸", "d": "少见的植物优质蛋白主食"}]
+  },
+  {
+    "id": "usda_chickpea", "name": "鹰嘴豆（干）", "cat": "legume", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 378, "protein": 20.5, "fat": 6.0, "carb": 63.0, "fiber": 12.2,
+      "vc": 4, "ve": 0.82, "potassium": 718, "calcium": 57, "iron": 4.3, "magnesium": 79,
+      "phosphorus": 252, "zinc": 2.8, "b1": 0.48, "b2": 0.21, "b6": 0.535, "folate": 557,
+      "niacin": 1.54},
+    "special": [{"n": "低 GI 淀粉", "a": "GI ≈ 28", "d": "升糖慢，饱腹感强"}]
+  },
+  {
+    "id": "usda_chia", "name": "奇亚籽", "cat": "nut", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 486, "protein": 16.5, "fat": 30.7, "carb": 42.1, "fiber": 34.4,
+      "calcium": 631, "iron": 7.7, "magnesium": 335, "phosphorus": 860, "potassium": 407,
+      "zinc": 4.6, "b1": 0.62, "b2": 0.17, "folate": 49, "niacin": 8.83, "ve": 0.5},
+    "special": [{"n": "α-亚麻酸", "a": "约 17 g/100 g", "d": "植物性 Omega-3，泡水膨胀增加饱腹感"}]
+  },
+  {
+    "id": "usda_greekyogurt", "name": "希腊酸奶（脱脂）", "cat": "dairy", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 59, "protein": 10.2, "fat": 0.4, "carb": 3.6, "sugar": 3.2,
+      "calcium": 110, "phosphorus": 135, "potassium": 141, "sodium": 36, "zinc": 0.5,
+      "b2": 0.23, "b12": 0.75, "selenium": 9.7},
+    "special": [{"n": "高蛋白低脂", "a": "10 g 蛋白 / 59 kcal", "d": "减脂期优质的加餐蛋白来源"}]
+  },
+  {
+    "id": "usda_oats", "name": "燕麦片（生）", "cat": "grain", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 389, "protein": 16.9, "fat": 6.9, "carb": 66.3, "fiber": 10.6,
+      "calcium": 54, "iron": 4.7, "magnesium": 177, "phosphorus": 523, "potassium": 429,
+      "zinc": 3.97, "b1": 0.76, "b2": 0.14, "b6": 0.12, "folate": 56, "niacin": 0.96,
+      "ve": 0.42},
+    "special": [{"n": "β-葡聚糖", "a": "约 4 g/100 g", "d": "可溶性纤维，帮助降低胆固醇与餐后血糖"}]
+  },
+  {
+    "id": "usda_wholewheat", "name": "全麦面包", "cat": "grain", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 247, "protein": 13.0, "fat": 3.4, "carb": 41.0, "fiber": 7.0,
+      "sugar": 4.3, "calcium": 107, "iron": 2.5, "magnesium": 82, "phosphorus": 180,
+      "potassium": 254, "zinc": 1.1, "b1": 0.39, "b2": 0.17, "niacin": 4.4, "folate": 42},
+    "special": [{"n": "全谷物", "a": "纤维 7 g/100 g", "d": "比白面包升糖更慢，饱腹更久"}]
+  },
+  {
+    "id": "usda_bellpepper", "name": "彩椒", "cat": "fruitVeg", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 31, "protein": 1.0, "fat": 0.3, "carb": 6.0, "fiber": 2.1,
+      "sugar": 4.2, "vc": 128, "va": 157, "ve": 1.58, "potassium": 211, "calcium": 7,
+      "iron": 0.43, "magnesium": 12, "folate": 46, "b6": 0.29},
+    "special": [{"n": "维生素 C", "a": "128 mg/100 g", "d": "约为柠檬的 3 倍，生吃或快炒保留最好"}]
+  },
+  {
+    "id": "usda_asparagus", "name": "芦笋", "cat": "leafy", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 20, "protein": 2.2, "fat": 0.12, "carb": 3.9, "fiber": 2.1,
+      "sugar": 1.9, "vc": 5.6, "va": 38, "ve": 1.13, "potassium": 202, "calcium": 24,
+      "iron": 2.14, "magnesium": 14, "folate": 52, "b1": 0.14, "b2": 0.14},
+    "special": [{"n": "叶酸", "a": "52 µg/100 g", "d": "备孕与孕期重点营养素，焯水别超过 1 分钟"}]
+  },
+  {
+    "id": "usda_cherry", "name": "车厘子", "cat": "fruit", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 63, "protein": 1.06, "fat": 0.2, "carb": 16.0, "fiber": 2.1,
+      "sugar": 12.8, "vc": 7, "va": 3, "potassium": 222, "calcium": 13, "iron": 0.36,
+      "magnesium": 11},
+    "special": [{"n": "花青素", "a": "含量较高", "d": "深红色果皮中的抗氧化成分"}]
+  },
+  {
+    "id": "usda_pomegranate", "name": "石榴", "cat": "fruit", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 83, "protein": 1.7, "fat": 1.2, "carb": 18.7, "fiber": 4.0,
+      "sugar": 13.7, "vc": 10.2, "ve": 0.6, "potassium": 236, "calcium": 10, "iron": 0.3,
+      "magnesium": 12, "folate": 38},
+    "special": [{"n": "多酚（安石榴苷）", "a": "含量较高", "d": "抗氧化，籽里的纤维也别浪费"}]
+  },
+  {
+    "id": "usda_almond", "name": "巴旦木", "cat": "nut", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 579, "protein": 21.2, "fat": 49.9, "carb": 21.6, "fiber": 12.5,
+      "sugar": 4.4, "vc": 0, "ve": 25.6, "potassium": 733, "calcium": 269, "iron": 3.7,
+      "magnesium": 270, "phosphorus": 481, "zinc": 3.1, "b2": 1.14, "niacin": 3.6},
+    "special": [{"n": "维生素 E", "a": "25.6 mg/100 g", "d": "每天一小把（约 10 颗）就够，别过量"}]
+  },
+  {
+    "id": "usda_sardine", "name": "沙丁鱼", "cat": "fish", "common": true,
+    "src": "USDA", "est": true,
+    "per100": {"kcal": 208, "protein": 24.6, "fat": 11.5, "carb": 0, "vc": 0,
+      "calcium": 382, "iron": 2.9, "magnesium": 39, "phosphorus": 490, "potassium": 397,
+      "sodium": 505, "zinc": 1.3, "b12": 8.9, "vd": 4.8, "selenium": 52.7},
+    "special": [{"n": "DHA/EPA + 钙", "a": "含小骨钙", "d": "连骨吃补钙，Omega-3 含量高"}]
+  }
+]
