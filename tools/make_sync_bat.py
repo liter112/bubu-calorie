@@ -1,4 +1,4 @@
-"""生成「同步到GitHub.bat」（GBK 编码，中文 Windows 的 cmd 才能正确显示中文）。
+﻿"""生成「同步到GitHub.bat」（GBK 编码，中文 Windows 的 cmd 才能正确显示中文）。
 
 改了提示语之后重新运行：<dsh 内置 python> tools/make_sync_bat.py
 """
@@ -9,6 +9,7 @@ OUT = os.path.join(BASE, "同步到GitHub.bat")
 
 BAT = r"""@echo off
 setlocal
+chcp 936 >nul
 cd /d "%~dp0"
 
 echo ==========================================
