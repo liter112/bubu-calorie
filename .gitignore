@@ -1,0 +1,13 @@
+# 无头浏览器临时配置目录
+tools/ep-*/
+tools/edge-profile*/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 系统 / 编辑器临时文件
+Thumbs.db
+.DS_Store
+*.tmp
+*.log

@@ -9,7 +9,7 @@
 3. 「记录」页搜索食材（支持中文名与括号里的别名）→ 选克数 → 选做法（卡片上直接写缩水率和用油量）→ 看结果 → 加入今日。
 4. 「今日」页看进度环与任务，记满一天后点「完成今日打卡」，卜卜出场 + 随机营养小知识。
 5. 「分析」页看 25 项营养素的达标情况、膳食宝塔和今天吃到的特殊营养素。
-6. 自测页：打开 `index.html#selftest`，会跑 64 条断言并显示通过情况。
+6. 自测页：打开 `index.html#selftest`，会跑 72 条断言并显示通过情况。
 
 ## 分享给朋友
 
@@ -20,6 +20,87 @@
 - 食物库、USDA KEY、引导逻辑都随文件走；**USDA KEY 不随文件分享**，朋友要用联网补全得自己申请一个填进去。
 - ⚠️ **手机微信里直接点 HTML 文件会显示成文件，不会打开网页**。要么让对方在电脑上双击打开，要么先把文件存到手机（文件管理器 / 网盘 App），再用手机浏览器打开。
 - 换电脑、清理浏览器数据前，到「设置 → 分享给朋友」点 **导出我的备份**；到新设备后用 **导入备份** 还原。备份里不含 USDA KEY。
+
+## 在线访问（GitHub Pages）
+
+仓库地址：<https://github.com/liter112/bubu-calorie>
+
+如果开启了 GitHub Pages，网页地址是：**<https://liter112.github.io/bubu-calorie/>**（手机也能直接打开）。
+
+开启方法（只需要做一次）：
+
+1. 打开仓库 → 点 **Settings**
+2. 左侧菜单找到 **Pages**
+3. **Source** 选 `Deploy from a branch`
+4. **Branch** 选 `main`，目录选 `/ (root)` → 点 **Save**
+5. 等 1–2 分钟，访问上面的网址就行
+
+> - 免费账号的 Pages 只对 **Public** 仓库开放。如果仓库是 Private，需要先改成 Public（Settings → General → 最下面 Change visibility），或者升级 GitHub Pro。
+> - **页面公开 ≠ 数据公开**：每个人的身高体重、打卡记录只保存在自己浏览器的 localStorage 里，别人打开链接看到的是空白的初始状态。
+
+## 更新后如何同步到 GitHub
+
+改了文件只是改了**本地**；只有「提交 + 推送」到 GitHub，别人下载到的才是新版本。如果开了 Pages，推送后 1 分钟内网页也会自动更新。
+
+### 方式一：双击 `同步到GitHub.bat`（推荐，最省事）
+
+仓库根目录有个 **`同步到GitHub.bat`**，双击它就会自动完成：
+
+1. 用 python 重新打包 `index.html`（没装 python 会跳过并提示）
+2. 把改动提交到本地（会让你写一句更新说明，直接回车用默认的日期时间）
+3. 拉取远端最新（避免冲突）→ 推送到 GitHub
+
+看到 **「完成！GitHub 上的文件已更新」** 就成功了。出错会停住并显示原因，把提示截图发我即可。
+
+### 方式二：GitHub Desktop（图形界面）
+
+1. 安装 <https://desktop.github.com/>，用你的 GitHub 账号登录
+2. `File → Add local repository`，选择 `D:\food`
+3. 左下角填一句说明（例如「更新 README」），点 **Commit to main**
+4. 点右上角的 **Push origin**
+5. 以后每次动手前，先点 **Fetch origin → Pull**（把别人的改动拉下来）
+
+### 方式三：命令行
+
+```powershell
+cd D:\food
+python build.py            # 只有改了 src/ 或样式才需要，重新生成 index.html
+git add -A
+git commit -m "更新说明"
+git push
+```
+
+- 首次使用要先配置身份（只做一次）：
+  ```powershell
+  git config --global user.name "你的名字"
+  git config --global user.email "你的邮箱"
+  ```
+- 推送时如果弹出登录窗口，密码要填 **Personal Access Token**（GitHub 已经不支持账号密码）：
+  GitHub 头像 → Settings → Developer settings → Personal access tokens → **Tokens (classic)** → Generate new token → 勾选 `repo` → 复制生成的串当密码。
+  这台电脑已经用 Git Credential Manager 记住过凭据，通常不会再问。
+
+### 方式四：网页上传（只改一两个文件时）
+
+GitHub 仓库页 → **Add file → Upload files** → 把文件拖进去 → **Commit changes**。
+
+> 注意：网页上传只更新你拖上去的那个文件，**不会重新打包 `index.html`**。如果改的是 `src/`，还是要在本地跑 `python build.py` 再上传整个文件。
+
+### 常见问题
+
+| 现象 | 原因与处理 |
+|---|---|
+| `rejected ... non-fast-forward` | 远端比你新，先 `git pull --rebase` 再 `git push`（bat 已经自动做了这步） |
+| `Authentication failed` | 凭据过期，按上面的 Personal Access Token 步骤重新登录一次 |
+| 提交成功但网页没变 | 浏览器缓存，按 `Ctrl + F5` 强刷；如果开了 Pages，再等 1 分钟构建 |
+| 不确定要提交什么 | 先 `git status` 看改动列表，确认没把临时文件带进去 |
+| 改坏了想回退 | GitHub 网页上打开那个文件 → History → 选旧版本 → 复制内容改回来 |
+| 单个文件超过 100 MB | GitHub 会拒绝推送，需要拆分成多个文件 |
+
+### 更新前的小检查
+
+1. 改了 `src/` 或样式 → 先 `python build.py`，否则 `index.html` 不是最新的
+2. 打开 `index.html#selftest` 跑一遍自测，确认全部通过
+3. 再提交推送
 
 ## 你的档案与目标
 
@@ -108,11 +189,29 @@ JSON 格式（与导出文件一致）：
 
 ## USDA 联网补全（可选，默认关闭）
 
-1. 到 <https://fdc.nal.usda.gov/api-key-signup.html> 免费申请 api.data.gov 的 KEY。
-2. 设置页粘贴 KEY、勾选「开启联网查询」。
-3. 内置库 + 自定义库都搜不到时，记录页会出现「用 USDA 查询」按钮；结果只用于当次记录，不会写回食材库。
+内置的 1657 条数据已经够日常用了。如果想吃本地库里没有的食材（某些进口食品、国外品牌），可以免费申请一个 USDA 的 API KEY，让网页在本地查不到时自动去 USDA 查。
 
-KEY 只保存在本机浏览器 localStorage，不会上传到任何服务器。浏览器直连 USDA 可能被 CORS 拦截，失败会提示并回退内置数据。
+### 零基础申请 KEY（约 3 分钟）
+
+![在 FoodData Central 顶部 DATA 菜单里点最下面的 GET AN API KEY](docs/usda-api-step1.jpg)
+
+1. 打开 <https://fdc.nal.usda.gov/>。不用注册也能浏览食物，但**调用 API 必须带 KEY**。
+2. 鼠标移到顶部导航栏的 **DATA**，在下拉菜单里点最下面的 **GET AN API KEY**（就是上图红框的位置）。
+3. 页面会跳到 api.data.gov 的注册页：填 **First Name（名）**、**Last Name（姓）**、**Email（邮箱）**，勾选同意条款，点 **Sign Up**。
+   - 姓名用拼音或英文都可以，邮箱要填你能收到的。
+   - 不需要信用卡，也不需要学校/公司邮箱。
+4. 几秒后邮箱会收到一封标题类似 **"Your API key"** 的邮件，正文里那串 **40 位左右的字符**就是 KEY。
+   - 没收到可以看垃圾邮件；也可以登录 <https://api.data.gov/>，在 **API Keys** 页面随时查看或重发。
+5. 回到网页 → **设置 → USDA 联网补全** → 把 KEY 粘进输入框 → 勾选「开启联网查询」→ 点 **保存**。
+6. 到「记录」页搜一个本地库没有的食材，搜索框下方会出现「用 USDA 查询」按钮，点它就能拿到 USDA 的数据。
+
+### 注意事项
+
+- **免费**，不用绑卡；限速约 **1000 次/小时**（按 IP 算），个人使用完全够。
+- KEY 只存在你**本机的浏览器**里，不会上传到任何服务器；「导出备份」时也会自动剔除 KEY，所以分享 `index.html` 或备份文件都不会泄露。
+- 浏览器直连 USDA 可能被 **CORS** 拦截，失败时页面会提示并自动回退内置数据，不影响主流程。
+- 别把自己的 KEY 发到公开群或仓库里；万一泄露，回 api.data.gov 删掉重新申请一个即可。
+- 如果哪天 USDA 改版找不到入口，可以直接访问 <https://fdc.nal.usda.gov/api-key-signup.html>。
 
 ## 打卡与游戏化
 
@@ -130,16 +229,22 @@ src/
   js/data-foods.js        由 tools/build_foods.py 生成（勿手改）
   js/*.js                 其余模块
 build.py                  把 src/ 内联成单文件 index.html
+同步到GitHub.bat          双击：重新打包 + 提交 + 推送（GBK 编码）
+docs/                     README 用的配图（USDA KEY 申请截图）
 tools/build_foods.py      cfct-raw.json → data-foods.js + qc-report.md
+tools/make_usda_guide.py  给 USDA 截图加红框与说明，生成 docs/usda-api-step1.jpg
+tools/make_sync_bat.py    重新生成「同步到GitHub.bat」
 tools/dom-smoke.mjs       Node 里跑一遍页面逻辑（最小 DOM 垫片）
+tools/migrate-test.mjs    老存档迁移 / 备份导入导出测试
 tools/shoot.mjs           CDP 无头截图
 ```
 
-改完源码后运行 `python build.py` 重新生成 `index.html`。
+改完源码后运行 `python build.py` 重新生成 `index.html`；想一步到位就用根目录的 `同步到GitHub.bat`。
 
 ```powershell
 python build.py
-node tools/dom-smoke.mjs    # 46/46 断言 + 各页面渲染不报错
+node tools/dom-smoke.mjs     # 自测断言 + 各页面渲染不报错
+node tools/migrate-test.mjs  # 老用户升级 / 备份导入导出
 ```
 
 ## 已知限制
