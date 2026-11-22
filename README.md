@@ -1,6 +1,9 @@
 # 卜卜卡路里 · 多邻国式营养打卡
 
 一个**双击就能打开**的单文件网页：输入食材、克数与烹饪方式，按《中国食物成分表》算出这一份真实的营养，按你自己的身高体重算出每日目标，给出缺口建议和每日 10 种食物推荐；打卡后胡萝卜吉祥物「卜卜」会跳出来，送你一条营养小知识。
+<img width="2340" height="1280" alt="5e953e8b6ffe9ce9b525507446556da9" src="https://github.com/user-attachments/assets/c8378118-1f65-4577-8b1c-0b16d7566e2e" />
+<img width="1464" height="1279" alt="3467441d526dacfc08776e21b4283ef5" src="https://github.com/user-attachments/assets/d593d25b-bbf0-4704-bff4-b9d1d8641d81" />
+
 
 ## 怎么用
 
